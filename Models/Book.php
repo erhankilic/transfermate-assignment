@@ -43,6 +43,20 @@ class Book extends DB
         return $q->fetchAll();
     }
 
+    public static function searchBooksByAuthor(string $name): array
+    {
+        if(!self::$pdo) {
+            self::connect();
+        }
+
+        $sql = "SELECT a.full_name, b.book_name FROM books as b INNER JOIN authors as a ON b.author_id = a.id WHERE a.full_name LIKE ? ORDER BY a.full_name";
+
+        $q = self::$pdo->prepare($sql);
+        $q->execute(["%$name%"]);
+
+        return $q->fetchAll();
+    }
+
     public static function getBookByName(string $name)
     {
         if(!self::$pdo) {
