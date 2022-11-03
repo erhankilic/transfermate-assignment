@@ -20,6 +20,10 @@ input, button {
 }
 .books-container {
     width: 100%;
+    display: none;
+}
+.books-container.show {
+    display: block;
 }
 .books-container > .books-header {
     background-color: darkgray;

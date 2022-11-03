@@ -3,6 +3,11 @@
 class DB
 {
     protected static $pdo;
+    protected const DB_SERVER = 'localhost';
+    protected const DB_PORT = '5432';
+    protected const DB_NAME = 'erhan';
+    protected const DB_USER = 'erhan';
+    protected const DB_PASSWORD = '123456';
     
     public static function connect(): void
     {
@@ -14,11 +19,11 @@ class DB
 
         $query = sprintf(
             "pgsql:host=%s port=%s dbname=%s user=%s password=%s",
-            "localhost",
-            "5432",
-            "erhan",
-            "erhan",
-            "123456"
+            self::DB_SERVER,
+            self::DB_PORT,
+            self::DB_NAME,
+            self::DB_USER,
+            self::DB_PASSWORD
         );
 
         try {

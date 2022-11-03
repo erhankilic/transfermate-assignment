@@ -48,6 +48,7 @@ function search() {
             try {
                 books = JSON.parse(xmlhttp.responseText);
                 document.getElementById('books').innerHTML = '';
+                document.querySelector('.books-container').className = 'books-container show';
 
                 addBookToHTML(0);
             } catch (error) {
