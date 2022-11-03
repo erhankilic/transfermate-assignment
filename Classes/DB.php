@@ -4,7 +4,7 @@ class DB
 {
     protected static $pdo;
     
-    public static function connect()
+    public static function connect(): void
     {
         $settings = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -22,15 +22,14 @@ class DB
         );
 
         try {
-            $pdo = new PDO($query, null, null, $settings);
+            self::$pdo = new PDO($query, null, null, $settings);
         } catch (PDOException $e) {
             die($e->getMessage());
         }
-
-        self::$pdo = $pdo;
     }
 
-    public static function setupDB() {
+    public static function setupDB(): void
+    {
         if (!self::$pdo) {
             self::connect();
         }
