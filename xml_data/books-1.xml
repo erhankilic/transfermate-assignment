@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <books>
     <book>
-        <author>Author 1</author>
-        <name>Name 1</name>
+        <author>저자 이름</author>
+        <name>책 이름</name>
     </book>
     <book>
-        <author>Author 2</author>
-        <name>Name 2</name>
+        <author>著者名</author>
+        <name>書名</name>
     </book>
     <book>
         <author>Author 3</author>
